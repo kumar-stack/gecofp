@@ -37,7 +37,7 @@ leftbtn.addEventListener('click',function(){
 })
 
 rytbtn.addEventListener('click',function(){  
-    if(counter <= slide.length-1){
+    if(counter < slide.length-1){
         counter++
         slides.style.transform = `translateX(${-width * counter}px)`;    
         slides.style.transition = '1s ease-in-out'
@@ -68,15 +68,25 @@ slides.append(firstClone);
 
 slides.style.transform = `translateX(${-width*counter}px)`;
 
+let clrInt
+
 const sliding = () => {
-    setInterval(() => {
+     clrInt =  setInterval(() => {
         if(counter < slide.length-1){
             counter++;
             slides.style.transform = `translateX(${-width*counter}px)`;
-            slides.style.transition = '1s'
+            slides.style.transition = '.5s'
         }
-    }, 3000);
+    }, 3000)
 }
+
+slides.addEventListener('mouseenter',function(){
+    clearInterval(clrInt)
+})
+
+slides.addEventListener('mouseleave',function(){
+    sliding()
+})
 
 slides.addEventListener('transitionend',()=>{
     slide = document.querySelectorAll('.slide');
@@ -93,6 +103,7 @@ const ccm = document.querySelector('.cards_carousel')
 const cw = cc[0].clientWidth + 24;
 let ccc = 1
 ccm.style.transform=`translateX(-${cw}px)`
+
 const lft = () => {
     if(ccc===1){
         ccm.style.transition = 'none' 
