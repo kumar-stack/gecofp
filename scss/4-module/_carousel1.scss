@@ -1,0 +1,216 @@
+@import'../1-variable/variable';
+
+.frst_carousel{
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow: hidden;       
+    .crbtn{
+        position: absolute;
+        background: $primary-color;
+        border-radius: 34px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        z-index: 12;
+    }
+    .btn{
+        font-size: 1.8rem;
+        padding: 6px;
+        color: $secondary-color;           
+    }
+    .left_btn{           
+        left: 5%;
+        top: 43%;
+    }
+    .ryt_btn{
+        right: 5%;
+        top: 43%;
+    }
+    .bimg{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .wrap{
+        width: 82%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        overflow: hidden;      
+        .slides{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            .slide{
+                min-width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @media (min-width:320px) and (max-width:768px){
+                   flex-direction:column-reverse;
+                }
+                .carousel_content{
+                   height: 400px;
+                   width: 40%;
+                   @media (min-width:320px) and (max-width:768px){
+                        margin-top: 4%;
+                        width: 80%;
+                        height: 50%;
+                        text-align: center;
+                   }
+                   @media (min-width:769px) and (max-width:992px){
+                        margin-top:12%;
+                        width: 38%;
+                        height: 400px;
+                        margin-left: 14%;
+                   }
+                    @media (min-width:993px) and (max-width:1200px){
+                        margin-top: 8%;
+                        width: 50%;
+                        margin-left: 11%;
+                    }
+                    @media (min-width:1201px) and (max-width:1366px){
+                        margin-left: 0;
+                    }
+                    @media (min-width:1367px) and (max-width:1400px){
+                        margin-left: 0;
+                        margin-top: 0;
+                    }
+                    @media (min-width:1401px) and (max-width:1600px){
+                        margin-left: 2%;
+                        margin-top: 0;
+                    }
+                    h4{
+                        color: $primary-color;
+                        font-size: clamp(12px,1vw,16px);
+                    }
+                    h1{
+                        font-size: clamp(2rem,5vw,5rem);
+                        color: $secondary-color;         
+                        span{
+                            color: $primary-color;
+                        }
+                    }
+                    .matches{
+                       position: relative;
+                       bottom: 25px;
+                       @media (min-width:320px) and (max-width:768px){
+                        bottom: 0;
+                        margin-bottom: 40px;
+                       }
+                       @media (min-width:769px) and (max-width:992px){
+                        top: 0;
+                       }
+                        @media (min-width:993px) and (max-width:1200px){
+                          bottom: 0;
+                        }
+                    }
+                    p{
+                        color: $secondary-color;
+                        position: relative;
+                        bottom: 20px;
+                        font-size: clamp(12px,1vw,17px);
+                        @media (min-width:320px) and (max-width:768px){
+                            margin-bottom: 0;
+                        }
+                        @media (min-width:769px) and (max-width:992px){
+                           top: 10px;
+                        }
+                        @media (min-width:993px) and (max-width:1200px){
+                            bottom: 0;
+                        }
+                    }
+                    .skewit{
+                        transform: skewX(-20deg);
+                        width: 150px;
+                        height: 45px;
+                        background-color: $primary-color;    
+                        margin-top: 26px; 
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        @media (min-width:320px) and (max-width:768px){
+                            margin:0 auto;
+                            width: 125px;
+                            height: 36px;
+                        }
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            right: -10px;
+                            background-color: $primary-color;
+                            width: 5px;
+                            height: 45px;
+                            @media (min-width:320px) and (max-width:768px){
+                                height: 36px;
+                            }
+                        }          
+                        .read{
+                            font-weight: lighter;
+                            font-size: 16px;
+                            color: $black;                   
+                            padding: 10px 15px;
+                            text-decoration: none;
+                            // transform: rotate(20deg);                        
+                        }
+                    }
+                }
+                .carousel_imgs{
+                    @media (min-width:320px) and (max-width:768px){
+                        height: 50%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        box-sizing: border-box;
+                    }
+                    @media (min-width:769px) and (max-width:992px){
+                        height: 100%;
+                        width: 50%;
+                    }
+                    @media (min-width:993px) and (max-width:1200px){
+                        width: 75%;
+                        margin-top: 0;
+                    }
+                    .chrctr{
+                        width: 600px;
+                        margin: 2% 4%;
+                        @media (min-width:320px) and (max-width:480px){
+                            width: 274px;
+                            margin-top: 20px;
+                        }
+                        @media (min-width:481px) and (max-width:576px){
+                            width: 284px;   
+                            margin-top: 20px;                  
+                        }
+                        @media (min-width:577px) and (max-width:768px){
+                            width: 300px;
+                            margin-top: 20px;
+                        }
+                        @media (min-width:769px) and (max-width:992px){
+                            width: 75%;
+                            margin-top: 140px;
+                        }
+                        @media (min-width:993px) and (max-width:1200px){
+                           width: 420px;
+                        }
+                        @media (min-width:1201px) and (max-width:1366px){
+                            width: 480px;
+                        }
+                        @media (min-width:1367px) and (max-width:1400px){
+                            width: 490px;
+                        }
+                        @media (min-width:1401px) and (max-width:1650px){
+                            width: 600px;
+                            margin: 0;
+                    }
+                    }
+                }
+            }
+        }
+    }
+}

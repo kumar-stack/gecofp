@@ -67,27 +67,17 @@ const firstClone = slide[0].cloneNode(true);
 slides.append(firstClone);
 
 slides.style.transform = `translateX(${-width*counter}px)`;
-
-let clrInt
+let stopInterval
 
 const sliding = () => {
-     clrInt =  setInterval(() => {
+    stopInterval = setInterval(() => {
         if(counter < slide.length-1){
             counter++;
             slides.style.transform = `translateX(${-width*counter}px)`;
-            slides.style.transition = '.5s'
+            slides.style.transition = '1s'
         }
-    }, 3000)
+    }, 3000);
 }
-
-slides.addEventListener('mouseenter',function(){
-    clearInterval(clrInt)
-})
-
-slides.addEventListener('mouseleave',function(){
-    sliding()
-})
-
 slides.addEventListener('transitionend',()=>{
     slide = document.querySelectorAll('.slide');
     if(slide[counter]===firstClone){
@@ -98,12 +88,20 @@ slides.addEventListener('transitionend',()=>{
 })
 sliding()
 
+slides.addEventListener('mouseenter',function(){
+    clearInterval(stopInterval)
+})
+
+slides.addEventListener('mouseleave',function(){
+    sliding()
+})
+
+
 let cc = document.querySelectorAll('.card_box')
 const ccm = document.querySelector('.cards_carousel')
 const cw = cc[0].clientWidth + 24;
 let ccc = 1
 ccm.style.transform=`translateX(-${cw}px)`
-
 const lft = () => {
     if(ccc===1){
         ccm.style.transition = 'none' 
