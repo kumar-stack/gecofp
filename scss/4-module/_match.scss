@@ -180,7 +180,8 @@
             z-index: -1;
             position: absolute;
             left: 190px;
-            color: $secondary-color;
+            color: $primary-color;
+            opacity: 20%;
             top: -63px;
             letter-spacing: -17px;
             @media(min-width:320px) and (max-width:480px){
